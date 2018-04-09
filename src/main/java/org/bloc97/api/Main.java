@@ -56,7 +56,7 @@ public class Main {
         for (ForecastDataPointMinutely m : minutely) {
             System.out.println(m.getPrecipProbability());
         }
-        return;
+        
         String apikey = new String(Files.readAllBytes(Paths.get("api.key")), StandardCharsets.UTF_8);
         
         GoogleAPI api = new GoogleAPI();
