@@ -15,9 +15,10 @@ import java.util.Date;
 import java.util.List;
 import org.bloc97.api.darksky.DarkSkyAPI;
 import org.bloc97.api.darksky.ForecastData;
-import org.bloc97.api.darksky.ForecastDataPointMinutely;
+import org.bloc97.api.darksky.data.ForecastDataPointMinutely;
 import org.bloc97.api.darksky.ForecastRequest;
 import org.bloc97.api.darksky.ForecastRequestBuilder;
+import org.bloc97.api.darksky.data.ForecastDataPoint;
 import org.bloc97.api.google.DirectionsData;
 import org.bloc97.api.google.DirectionsRequest;
 import org.bloc97.api.google.GeocodingRequest;
@@ -41,8 +42,8 @@ public class Main {
         
         ForecastRequestBuilder b = new ForecastRequestBuilder();
         b.setKey(darkskyapi);
-        b.setLatitude(45);
-        b.setLongitude(-73);
+        b.setLatitude(45.2638);
+        b.setLongitude(-73.1756);
         b.setUnits(ForecastRequest.Units.CA);
         ForecastData d = dapi.requestForecast(b.build());
         System.out.println(d.getUnits());
@@ -51,10 +52,8 @@ public class Main {
         System.out.println(d.getCurrentlyData().getHumidity());
         System.out.println(d.getCurrentlyData().getPressure());
         System.out.println("UNAVAILABLE: " + d.isIsDarkskyUnavailable() + " INFO: " + d.getUnavailableInfo());
-        List<ForecastDataPointMinutely> minutely = d.getMinutelyData();
-        
-        for (ForecastDataPointMinutely m : minutely) {
-            System.out.println(m.getPrecipProbability());
+        for (ForecastDataPoint dp : d.getMinutelyData()) {
+            System.out.println(dp.getTime().toGMTString() + " " + dp.getPrecipProbability());
         }
         
         String apikey = new String(Files.readAllBytes(Paths.get("api.key")), StandardCharsets.UTF_8);

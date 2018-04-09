@@ -5,6 +5,13 @@
  */
 package org.bloc97.api.darksky;
 
+import org.bloc97.api.darksky.data.ForecastDataAlert;
+import org.bloc97.api.darksky.data.ForecastDataPointHourly;
+import org.bloc97.api.darksky.data.ForecastDataPointAllDeserializer;
+import org.bloc97.api.darksky.data.ForecastDataPointCurrently;
+import org.bloc97.api.darksky.data.ForecastDataPointDaily;
+import org.bloc97.api.darksky.data.ForecastDataPointMinutely;
+import org.bloc97.api.darksky.data.ForecastDataPointAll;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonArray;

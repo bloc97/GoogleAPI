@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package org.bloc97.api.darksky;
+package org.bloc97.api.darksky.data;
 
+import org.bloc97.api.darksky.data.ForecastDataPointAll;
 import java.util.Date;
 
 /**

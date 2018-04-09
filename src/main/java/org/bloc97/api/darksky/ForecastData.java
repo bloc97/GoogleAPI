@@ -5,6 +5,11 @@
  */
 package org.bloc97.api.darksky;
 
+import org.bloc97.api.darksky.data.ForecastDataAlert;
+import org.bloc97.api.darksky.data.ForecastDataPointHourly;
+import org.bloc97.api.darksky.data.ForecastDataPointCurrently;
+import org.bloc97.api.darksky.data.ForecastDataPointDaily;
+import org.bloc97.api.darksky.data.ForecastDataPointMinutely;
 import java.util.List;
 
 /**

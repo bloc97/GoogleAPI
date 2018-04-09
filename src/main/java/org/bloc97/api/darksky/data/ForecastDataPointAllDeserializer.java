@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package org.bloc97.api.darksky;
+package org.bloc97.api.darksky.data;
 
+import org.bloc97.api.darksky.data.ForecastDataPointAll;
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonDeserializer;
 import com.google.gson.JsonElement;
@@ -19,7 +20,7 @@ import java.util.Date;
  */
 public class ForecastDataPointAllDeserializer implements JsonDeserializer<ForecastDataPointAll> {
 
-    protected static double parseDouble(JsonElement s) {
+    public static double parseDouble(JsonElement s) {
         if (s != null) {
             try {
                 return s.getAsDouble();
@@ -28,7 +29,7 @@ public class ForecastDataPointAllDeserializer implements JsonDeserializer<Foreca
         }
         return Double.NaN;
     }
-    protected static Date parseDate(JsonElement s) {
+    public static Date parseDate(JsonElement s) {
         if (s != null) {
             try {
                 return new Date(s.getAsInt() * 1000L);
@@ -37,7 +38,7 @@ public class ForecastDataPointAllDeserializer implements JsonDeserializer<Foreca
         }
         return null;
     }
-    protected static String parseString(JsonElement s) {
+    public static String parseString(JsonElement s) {
         if (s != null) {
             try {
                 return s.getAsString();
