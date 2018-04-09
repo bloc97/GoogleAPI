@@ -3,8 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package org.bloc97.googleapi;
+package org.bloc97.api.google;
 
+import org.bloc97.api.UrlBuilder;
+import org.bloc97.api.HttpUtils;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
@@ -143,8 +145,6 @@ public class GoogleAPI {
                 list.add(new GeocodingData(address, latitude, longitude));
             }
         } catch (Exception e) {
-            
-            e.printStackTrace();
         }
         
         return list;

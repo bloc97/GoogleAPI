@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package org.bloc97.googleapi;
+package org.bloc97.api.google;
 
 import java.util.Date;
 
@@ -83,7 +83,7 @@ public class DirectionsRequestBuilder {
     
     /**
      *
-     * @param date
+     * @param mode Transit mode
      * @return self for builder chaining.
      */
     public DirectionsRequestBuilder setMode(DirectionsRequest.Mode mode) {
@@ -93,7 +93,7 @@ public class DirectionsRequestBuilder {
     
     /**
      *
-     * @param date
+     * @param trafficModel
      * @return self for builder chaining.
      */
     public DirectionsRequestBuilder setTrafficModel(DirectionsRequest.TrafficModel trafficModel) {
