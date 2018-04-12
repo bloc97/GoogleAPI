@@ -12,7 +12,7 @@ package org.bloc97.api.google;
 public class GeocodingRequest {
     private final String location, key;
 
-    public GeocodingRequest(String location, String key) {
+    protected GeocodingRequest(String location, String key) {
         this.location = location;
         this.key = key;
     }

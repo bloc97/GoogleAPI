@@ -60,6 +60,9 @@ public class ForecastRequestBuilder {
     }
     
     public ForecastRequest build() {
+        if (key.equals("0")) {
+            throw new IllegalStateException("Must include the api key in the request!");
+        }
         return new ForecastRequest(longitude, latitude, key, excludes, time, isExtendHourly, language, units);
     }
     

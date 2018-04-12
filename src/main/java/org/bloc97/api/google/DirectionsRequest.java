@@ -20,7 +20,7 @@ public class DirectionsRequest {
     private final DirectionsRequest.Mode mode;
     private final DirectionsRequest.TrafficModel trafficModel;
 
-    public DirectionsRequest(String origin, String destination, String key, boolean isDepartureTime, Date date, Mode mode, TrafficModel trafficModel) {
+    protected DirectionsRequest(String origin, String destination, String key, boolean isDepartureTime, Date date, Mode mode, TrafficModel trafficModel) {
         this.origin = origin;
         this.destination = destination;
         this.key = key;

@@ -25,6 +25,9 @@ public class GeocodingRequestBuilder {
     }
     
     public GeocodingRequest build() {
+        if (key.equals("0")) {
+            throw new IllegalStateException("Must include the api key in the request!");
+        }
         return new GeocodingRequest(location, key);
     }
     

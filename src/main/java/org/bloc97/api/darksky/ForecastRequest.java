@@ -21,7 +21,7 @@ public class ForecastRequest {
     private final Language language;
     private final Units units;
 
-    public ForecastRequest(double longitude, double latitude, String key, List<DataGroup> excludes, Date time, boolean isExtendHourly, Language language, Units units) {
+    protected ForecastRequest(double longitude, double latitude, String key, List<DataGroup> excludes, Date time, boolean isExtendHourly, Language language, Units units) {
         this.longitude = longitude;
         this.latitude = latitude;
         this.key = key;

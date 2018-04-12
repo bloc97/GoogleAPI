@@ -119,6 +119,9 @@ public class DirectionsRequestBuilder {
      * @return DirectionsRequest
      */
     public DirectionsRequest build() {
+        if (key.equals("0")) {
+            throw new IllegalStateException("Must include the api key in the request!");
+        }
         return new DirectionsRequest(origin, destination, key, isDepartureTime, time, mode, trafficModel);
     }
 }
