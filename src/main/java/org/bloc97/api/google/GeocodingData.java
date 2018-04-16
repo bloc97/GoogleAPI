@@ -14,20 +14,31 @@ public class GeocodingData {
     private final String address;
     private final double latitude, longitude;
 
-    public GeocodingData(String address, double latitude, double longitude) {
+    //Container class for GeocodingData
+    protected GeocodingData(String address, double latitude, double longitude) {
         this.address = address;
         this.latitude = latitude;
         this.longitude = longitude;
     }
 
+    /**
+     * Gets an human-readable address
+     * @return address
+     */
     public String getAddress() {
         return address;
     }
 
+    /**
+     * @return latitude
+     */
     public double getLatitude() {
         return latitude;
     }
 
+    /**
+     * @return longitude
+     */
     public double getLongitude() {
         return longitude;
     }

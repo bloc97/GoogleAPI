@@ -24,7 +24,11 @@ import java.nio.charset.StandardCharsets;
  */
 public interface HttpUtils {
     
-    
+    /**
+     * Parses a JSON string into a JsonObject
+     * @param jsonString an json-formatted string
+     * @return a JsonObject representing the json string
+     */
     public static JsonObject parseJson(String jsonString) {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         JsonObject object = new JsonParser().parse(jsonString).getAsJsonObject();
@@ -32,7 +36,13 @@ public interface HttpUtils {
         return object;
     }
     
-    
+    /**
+     * Sends an HTTP Request
+     * @param urlString url target of request
+     * @return result of the request
+     * @throws MalformedURLException
+     * @throws IOException
+     */
     public static String httpRequest(String urlString) throws MalformedURLException, IOException {
         URL url = new URL(urlString);
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
@@ -42,11 +52,11 @@ public interface HttpUtils {
         String s;
         String output = null;
         
-        while ((s = reader.readLine()) != null) {
+        while ((s = reader.readLine()) != null) { //Read until string is empty
             if (output == null) {
                 output = s;
             } else {
-                output += "\n" + s;
+                output += "\n" + s; //Newline
             }
         }
         reader.close();

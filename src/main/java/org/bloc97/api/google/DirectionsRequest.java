@@ -20,6 +20,7 @@ public class DirectionsRequest {
     private final DirectionsRequest.Mode mode;
     private final DirectionsRequest.TrafficModel trafficModel;
 
+    //Container class for Directions API requests
     protected DirectionsRequest(String origin, String destination, String key, boolean isDepartureTime, Date date, Mode mode, TrafficModel trafficModel) {
         this.origin = origin;
         this.destination = destination;
@@ -30,6 +31,10 @@ public class DirectionsRequest {
         this.trafficModel = trafficModel;
     }
     
+    /**
+     * Creates a builder for DirectionsRequest
+     * @return a DirectionsRequestBuilder
+     */
     public static final DirectionsRequestBuilder builder() {
         return new DirectionsRequestBuilder();
     }

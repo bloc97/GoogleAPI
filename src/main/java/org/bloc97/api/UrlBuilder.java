@@ -14,10 +14,19 @@ public class UrlBuilder {
     private String url;
     private int entries = 0;
     
+    /**
+     * Creates an UrlBuilder used for sending HTTP Requests
+     * @param url target base URL
+     */
     public UrlBuilder(String url) {
         this.url = url;
     }
     
+    /**
+     * Appends an query to the end of the URL, automatically adding necessary delimiters.
+     * @param key
+     * @param value
+     */
     public final void append(String key, String value) {
         if (entries > 0) {
             url += "&";
@@ -26,10 +35,16 @@ public class UrlBuilder {
         entries++;
     }
     
+    /**
+     * @return the full formatted URL
+     */
     public final String getUrl() {
         return url.replace(' ', '+');
     }
 
+    /**
+     * @return numbers of entries in the query
+     */
     public final int getEntriesNum() {
         return entries;
     }

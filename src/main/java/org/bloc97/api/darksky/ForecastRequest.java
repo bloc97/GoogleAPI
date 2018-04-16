@@ -20,7 +20,8 @@ public class ForecastRequest {
     private final boolean isExtendHourly;
     private final Language language;
     private final Units units;
-
+    
+    //Container class for forecast request
     protected ForecastRequest(double longitude, double latitude, String key, List<DataGroup> excludes, Date time, boolean isExtendHourly, Language language, Units units) {
         this.longitude = longitude;
         this.latitude = latitude;
@@ -32,6 +33,10 @@ public class ForecastRequest {
         this.units = units;
     }
     
+    /**
+     * Creates a builder for ForecastRequest
+     * @return a ForecastRequestBuilder
+     */
     public static ForecastRequestBuilder builder() {
         return new ForecastRequestBuilder();
     }

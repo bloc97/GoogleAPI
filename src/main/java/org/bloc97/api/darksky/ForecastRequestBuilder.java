@@ -23,41 +23,90 @@ public class ForecastRequestBuilder {
     private ForecastRequest.Language language = ForecastRequest.Language.DEFAULT;
     private ForecastRequest.Units units = ForecastRequest.Units.DEFAULT;
 
-    public void setLongitude(double longitude) {
+    /**
+     * Sets the longitude, this is mandatory
+     * @param longitude
+     * @return self for builder chaining.
+     */
+    public ForecastRequestBuilder setLongitude(double longitude) {
         this.longitude = longitude;
+        return this;
     }
 
-    public void setLatitude(double latitude) {
+    /**
+     * Sets the latitude, this is mandatory
+     * @param latitude
+     * @return self for builder chaining.
+     */
+    public ForecastRequestBuilder setLatitude(double latitude) {
         this.latitude = latitude;
+        return this;
     }
 
-    public void setKey(String key) {
+    /**
+     * Sets the API key, this is mandatory
+     * @param key
+     * @return self for builder chaining.
+     */
+    public ForecastRequestBuilder setKey(String key) {
         this.key = key;
+        return this;
     }
 
-    public void setExcludes(ForecastRequest.DataGroup... excludes) {
+    /**
+     * Sets data to exclude from the request
+     * @param excludes
+     * @return self for builder chaining.
+     */
+    public ForecastRequestBuilder setExcludes(ForecastRequest.DataGroup... excludes) {
         if (excludes != null && excludes.length > 0) {
             this.excludes = Arrays.asList(excludes);
         } else {
             this.excludes = null;
         }
+        return this;
     }
 
-    public void setTime(Date time) {
+    /**
+     * Sets the begin time
+     * @param time Time of forecast, null for current time
+     * @return self for builder chaining.
+     */
+    public ForecastRequestBuilder setTime(Date time) {
         this.time = time;
+        return this;
     }
 
-    public void setIsExtendHourly(boolean isExtendHourly) {
+    /**
+     * Requests more hourly data
+     * @param isExtendHourly
+     * @return self for builder chaining.
+     */
+    public ForecastRequestBuilder setIsExtendHourly(boolean isExtendHourly) {
         this.isExtendHourly = isExtendHourly;
+        return this;
     }
 
-    public void setLanguage(ForecastRequest.Language language) {
+    /**
+     * Sets the language
+     * @param language
+     * @return self for builder chaining.
+     */
+    public ForecastRequestBuilder setLanguage(ForecastRequest.Language language) {
         this.language = language;
+        return this;
     }
 
-    public void setUnits(ForecastRequest.Units units) {
+    /**
+     * Specifies the units type
+     * @param units
+     * @return self for builder chaining.
+     */
+    public ForecastRequestBuilder setUnits(ForecastRequest.Units units) {
         this.units = units;
+        return this;
     }
+    
     
     public ForecastRequest build() {
         if (key.equals("0")) {

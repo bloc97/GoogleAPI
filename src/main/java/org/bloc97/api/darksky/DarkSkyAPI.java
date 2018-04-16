@@ -32,9 +32,15 @@ public class DarkSkyAPI {
     
     private final static Gson GSON = new GsonBuilder().registerTypeAdapter(ForecastDataPointAll.class, new ForecastDataPointAllDeserializer()).create();
 
-    
+    /**
+     * Requests forecast data from DarkSky.
+     * @param request
+     * @return ForecastData
+     * @throws IOException
+     */
     public ForecastData requestForecast(ForecastRequest request) throws IOException {
         
+        //Build the URL
         String fullURL = FORECAST_API_URL + request.getKey() + "/" + 
                  request.getLatitude()  + "," + 
                  request.getLongitude() + (request.getTime() == null ? "?" : "," + request.getTime().getTime()/1000 + "?");
@@ -55,6 +61,7 @@ public class DarkSkyAPI {
         
         String response = HttpUtils.httpRequest(builder.getUrl());
         
+        //Parse the JSON
         JsonObject responseData = HttpUtils.parseJson(response);
         
         List<ForecastDataPointMinutely> minutely = new LinkedList<>();
@@ -70,6 +77,7 @@ public class DarkSkyAPI {
         JsonObject currentlyData = responseData.getAsJsonObject("currently");
         ForecastDataPointCurrently currently = new ForecastDataPointCurrently(GSON.fromJson(currentlyData, ForecastDataPointAll.class));
         
+        //For each set of data add them into the correct object instance
         try {
             JsonArray minutelyData = responseData.getAsJsonObject("minutely").getAsJsonArray("data");
             for (JsonElement e : minutelyData) {
@@ -104,7 +112,7 @@ public class DarkSkyAPI {
                 
         }
         
-        
+        //Do the same for alerts
         List<ForecastDataAlert> alerts = new LinkedList<>();
         
         try {
@@ -149,6 +157,7 @@ public class DarkSkyAPI {
                 
         }
         
+        //Create final ForecastData
         ForecastData data = new ForecastData(
                 responseData.get("latitude").getAsDouble(),
                 responseData.get("longitude").getAsDouble(),

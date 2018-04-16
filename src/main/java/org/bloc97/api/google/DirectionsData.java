@@ -18,7 +18,8 @@ public class DirectionsData {
     private final int distance, time;
     private final Date departure, arrival;
 
-    public DirectionsData(String startAddress, String endAddress, int distance, int time, int departure, int arrival) {
+    //Container class for DirectionsData
+    protected DirectionsData(String startAddress, String endAddress, int distance, int time, int departure, int arrival) {
         this.distance = distance;
         this.time = time;
         this.start = startAddress;
@@ -28,25 +29,25 @@ public class DirectionsData {
     }
 
     /**
-     * @return Directions estimated time in seconds
+     * @return Directions estimated total time in seconds
      */
     public int getTime() {
         return time;
     }
     /**
-     * @return Directions estimated time in seconds
+     * @return Directions estimated remainder time in seconds, use with getTimeMinutes() and getTimeHours()
      */
     public int getTimeSeconds() {
         return time%60;
     }
     /**
-     * @return Directions estimated time in seconds
+     * @return Directions estimated remainder time in minutes, use with getTimeHours() and getTimeSeconds()
      */
     public int getTimeMinutes() {
         return time/60%60;
     }
     /**
-     * @return Directions estimated time in seconds
+     * @return Directions estimated time in hours, use with getTimeSeconds() and getTimeHours()
      */
     public int getTimeHours() {
         return time/60/60;
@@ -59,18 +60,30 @@ public class DirectionsData {
         return distance;
     }
 
+    /**
+     * @return Directions origin in human-readable format
+     */
     public String getOrigin() {
         return start;
     }
 
+    /**
+     * @return Directions destination in human-readable format
+     */
     public String getDestination() {
         return end;
     }
 
+    /**
+     * @return Directions departure time
+     */
     public Date getDepartureTime() {
         return departure;
     }
 
+    /**
+     * @return Directions arrival time
+     */
     public Date getArrivalTime() {
         return arrival;
     }

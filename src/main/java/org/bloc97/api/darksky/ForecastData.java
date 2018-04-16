@@ -38,7 +38,8 @@ public class ForecastData {
     private final List<String> sources;
     private final String units;
 
-    public ForecastData(double latitude, double longitude, String timezone, ForecastDataPointCurrently currentlyData, String minutelySummary, String minutelyIcon, List<ForecastDataPointMinutely> minutelyData, String hourlySummary, String hourlyIcon, List<ForecastDataPointHourly> hourlyData, String dailySummary, String dailyIcon, List<ForecastDataPointDaily> dailyData, List<ForecastDataAlert> alerts, boolean isDarkskyUnavailable, String unavailableInfo, List<String> sources, String units) {
+    //Container class for forecast data
+    protected ForecastData(double latitude, double longitude, String timezone, ForecastDataPointCurrently currentlyData, String minutelySummary, String minutelyIcon, List<ForecastDataPointMinutely> minutelyData, String hourlySummary, String hourlyIcon, List<ForecastDataPointHourly> hourlyData, String dailySummary, String dailyIcon, List<ForecastDataPointDaily> dailyData, List<ForecastDataAlert> alerts, boolean isDarkskyUnavailable, String unavailableInfo, List<String> sources, String units) {
         this.latitude = latitude;
         this.longitude = longitude;
         this.timezone = timezone;

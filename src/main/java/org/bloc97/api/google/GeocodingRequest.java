@@ -12,11 +12,16 @@ package org.bloc97.api.google;
 public class GeocodingRequest {
     private final String location, key;
 
+    //Container class for Geocoding API requests
     protected GeocodingRequest(String location, String key) {
         this.location = location;
         this.key = key;
     }
 
+    /**
+     * Creates a builder for GeocodingRequest
+     * @return a GeocodingRequestBuilder
+     */
     public static final GeocodingRequestBuilder builder() {
         return new GeocodingRequestBuilder();
     }

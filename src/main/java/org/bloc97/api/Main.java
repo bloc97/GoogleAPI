@@ -31,6 +31,7 @@ import org.bloc97.api.google.GoogleAPI;
  */
 public class Main {
     /**
+     * Main test class
      * @param args the command line arguments
      * @throws java.io.IOException
      */

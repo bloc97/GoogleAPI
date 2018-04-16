@@ -49,6 +49,7 @@ public class DirectionsRequestBuilder {
     }
 
     /**
+     * Sets the Google API key
      * @param key String representing the Google API key
      * @return self for builder chaining.
      */
@@ -58,6 +59,7 @@ public class DirectionsRequestBuilder {
     }
     
     /**
+     * Sets the departure time
      * @param date Requested departure time, must be either null, the current time or a future time.<br>
      * Passing a null variable is considered to be always current time.<br>
      * Note that this overrides setArrivalTime, as it is only allowed to have a single time target.
@@ -70,7 +72,7 @@ public class DirectionsRequestBuilder {
     }
     
     /**
-     *
+     * Sets the arrival time
      * @param date Requested arrival time, must be in the future.<br>
      * Note that this overrides setDepartureTime, as it is only allowed to have a single time target.
      * @return self for builder chaining.
@@ -82,7 +84,7 @@ public class DirectionsRequestBuilder {
     }
     
     /**
-     *
+     * Sets the transit mode
      * @param mode Transit mode
      * @return self for builder chaining.
      */
@@ -92,7 +94,7 @@ public class DirectionsRequestBuilder {
     }
     
     /**
-     *
+     * Sets the traffic model, only applicable to driving
      * @param trafficModel
      * @return self for builder chaining.
      */
@@ -116,6 +118,7 @@ public class DirectionsRequestBuilder {
     }
     
     /**
+     * Creates an DirectionsRequest
      * @return DirectionsRequest
      */
     public DirectionsRequest build() {
