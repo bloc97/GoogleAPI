@@ -29,7 +29,7 @@ import org.bloc97.api.google.GoogleAPI;
  *
  * @author bowen
  */
-public class Main {
+public class Test {
     /**
      * Main test class
      * @param args the command line arguments

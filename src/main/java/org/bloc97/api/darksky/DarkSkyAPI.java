@@ -43,7 +43,7 @@ public class DarkSkyAPI {
         //Build the URL
         String fullURL = FORECAST_API_URL + request.getKey() + "/" + 
                  request.getLatitude()  + "," + 
-                 request.getLongitude() + (request.getTime() == null ? "?" : "," + request.getTime().getTime()/1000 + "?");
+                 request.getLongitude() + (request.getTime() == null ? "" : "," + request.getTime().getTime()/1000);
         
         UrlBuilder builder = new UrlBuilder(fullURL);
         if (request.getExcludes() != null && !request.getExcludes().isEmpty()) {

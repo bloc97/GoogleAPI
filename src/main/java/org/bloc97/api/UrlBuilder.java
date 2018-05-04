@@ -28,7 +28,9 @@ public class UrlBuilder {
      * @param value
      */
     public final void append(String key, String value) {
-        if (entries > 0) {
+        if (entries == 0) {
+            url += "?";
+        } else {
             url += "&";
         }
         url += key + "=" + value;

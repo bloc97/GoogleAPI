@@ -21,8 +21,8 @@ import java.util.List;
  */
 public class GoogleAPI {
     
-    public final static String DIRECTIONS_API_URL = "https://maps.googleapis.com/maps/api/directions/json?";
-    public final static String GEOCODING_API_URL = "https://maps.googleapis.com/maps/api/geocode/json?";
+    public final static String DIRECTIONS_API_URL = "https://maps.googleapis.com/maps/api/directions/json";
+    public final static String GEOCODING_API_URL = "https://maps.googleapis.com/maps/api/geocode/json";
     
     /**
      * Requests directions data from Google.
